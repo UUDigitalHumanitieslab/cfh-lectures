@@ -1,0 +1,59 @@
+/*
+Theme Name: cfh
+Theme URI: http://underscores.me/
+Author: ICT&Media, Digital Humanities Lab
+Author URI: http://www.uu.nl/ictenmedia
+Description: uu2014 childtheme
+template: UU2014
+Version: 1.0-wpcom
+Text Domain: uu2014-cfh
+Domain Path: /languages/
+
+*/
+
+.video-item {
+	margin-bottom: 1em;
+	padding: 1em 0;
+	border-bottom: 1px solid #efefef;
+	clear: left;
+}
+
+.video-content h4, .video-single h4 {
+	margin: 0;
+} 
+
+.video-speaker {
+	margin: 0 0 1em 0;
+}
+
+/*
+.video-description {
+	font-size: 0.9em;
+}
+*/
+
+.video-thumb a:hover {
+	background-color: #ffcd00;
+}
+
+.video-display {
+	margin-bottom: 1em;
+}
+
+.video-date { 
+	color: #787878;
+	font-family: "Open Sans", "Frutiger", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+}
+
+.speaker-navigation { 
+	margin-bottom: 1em;
+}
+
+.current-character { 
+	font-weight: bold;
+}
+
+.home-footer, .home-widget-area .row { 
+	background-color: #efefef;
+}
