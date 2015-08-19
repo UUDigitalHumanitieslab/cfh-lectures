@@ -61,3 +61,11 @@ Domain Path: /languages/
 #dhlab_image {
 	margin-top: .5em;
 }
+
+.home-speakers .entry-content {
+	font-size: 14px; 
+}
+
+.home-speakers .entry-content a {
+	display: none; 
+}

@@ -83,17 +83,33 @@
 	<div class="container home-footer">
 		<div class="col-sm-4 home-keywords">
 			<h2>Keywords</h2>
-			<?php wp_tag_cloud(array('taxonomy' => 'post_tag')); ?> 
+			<?php wp_tag_cloud(array('taxonomy' => 'post_tag', 'smallest' => 16, 'largest' => 30)); ?> 
 			<a href="/keywords" class="button icon alignright">View all</a>
 		</div>
 		<div class="col-sm-4 home-events"> 
 			<h2>Events</h2>
-			<?php wp_tag_cloud(array('taxonomy' => 'event')); ?> 
+			<?php wp_tag_cloud(array('taxonomy' => 'event', 'smallest' => 16, 'largest' => 30)); ?> 
 			<a href="/events" class="button icon alignright">View all</a>
 		</div>
 		<div class="col-sm-4 home-speakers"> 
 			<h2>Speakers</h2>
-			TODO: wat tonen we hier? 
+			<?php 
+				// Show the most recent speaker
+				$args = array(
+					'post_type'	 			=> 'post',
+					'pagination'    		=> true,
+					'posts_per_page' 		=> '1',
+					'category_name' 		=> 'speaker',
+					'ignore_sticky_posts'   => false,
+				);
+				$q = new WP_Query( $args );
+				if ( $q->have_posts() ) {
+					while ( $q->have_posts() ) { 
+						$q->the_post(); 
+						get_template_part( 'parts/post-loop-speaker');
+					}
+				}
+			?>
 			<a href="/category/speaker" class="button icon alignright">View all</a>
 		</div>
 	</div>
