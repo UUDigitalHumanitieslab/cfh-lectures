@@ -36,8 +36,9 @@ get_header(); ?>
 	$args = array(
 		'post_type'			=> 'post',
 		'category_name'		=> 'speaker',
-		'orderby'			=> 'title',
 		'order'				=> 'ASC',
+		'meta_key'			=> 'last_name',
+		'orderby' 			=> 'meta_value',
 		'meta_query'		=> array(
 			array( 
 				'key'		=> 'last_name', 

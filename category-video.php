@@ -17,7 +17,8 @@ get_header(); ?>
 			'pagination'             => true,
 			'posts_per_page'         => '10',
 			'order'                  => 'DESC',
-			'orderby'                => 'title',
+			'meta_key'				 => 'date',
+			'orderby' 			     => 'meta_value'
 		);
 
 		// The Query
