@@ -23,10 +23,15 @@
 							</nav> -->
 						</div>
 						<div class="col-sm-4">
-							<img id="dhlab_image" class="aligncenter" alt="Digital Humanities Lab" src="http://cfh-lectures.wp.hum.uu.nl/files/2015/08/dhlab.jpg">
+							<a href="http://digitalhumanities.wp.hum.uu.nl/" target="_blank">
+								<img id="dhlab_image" class="aligncenter" alt="Digital Humanities Lab" src="http://cfh-lectures.wp.hum.uu.nl/files/2015/08/dhlab.jpg">
+							</a>
 						</div>
 						<div class="col-sm-4">
-							<p class="source-org copyright pull-right">&copy; <?php echo date('Y'); ?> Digital Humanities Lab<br/>Universiteit Utrecht, <a href="
+							<p class="source-org copyright pull-right">
+								&copy; <?php echo date('Y'); ?> 
+								<a href="http://digitalhumanities.wp.hum.uu.nl/" target="_blank">Digital Humanities Lab</a><br/>
+								Universiteit Utrecht, <a href="
 								<?php $mylocale = get_bloginfo('language');
 										if($mylocale == 'en-US') {
 										echo 'http://www.uu.nl/en/organisation/contact/disclaimer';
