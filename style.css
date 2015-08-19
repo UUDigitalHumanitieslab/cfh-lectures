@@ -57,3 +57,7 @@ Domain Path: /languages/
 .home-footer, .home-widget-area .row { 
 	background-color: #efefef;
 }
+
+#dhlab_image {
+	margin-top: .5em;
+}
