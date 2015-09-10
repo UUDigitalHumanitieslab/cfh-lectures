@@ -23,15 +23,10 @@
 					?>
 				</div>
 				<div class="col-sm-6 video-single">
-					<h4><?php the_title(); ?></h4>
-					<div class="video-speaker">
-						<?php 
-							foreach (get_field('speakers') as $speaker)
-							{
-								echo '<a href="' . get_the_permalink($speaker) . '">' . get_the_title($speaker) . '</a>';
-								echo get_the_post_thumbnail($speaker->ID, 'uu-thumbnail', array( 'class' => 'img-responsive' ));
-							}
-						?>
+					<div class="video-current">
+					<?php
+						echo get_template_part('parts/post-loop-video');
+					?>
 					</div>
 					<?php if (get_field('related_videos')) { ?>
 						<div class="video-related">
@@ -61,12 +56,6 @@
 					<div class="video-events"><h5>Events</h5><?php the_terms(get_the_id(), 'event'); ?></div>
 				</div>
 				<div class="col-sm-6">
-					<div class="video-date">
-					<?php 
-						$date = DateTime::createFromFormat('d/m/Y', get_field('date'));
-						echo $date->format(get_option('date_format'));
-					?>
-					</div>
 					<?php the_content(); ?>
 
 					<?php uu_sharebuttons(); ?>

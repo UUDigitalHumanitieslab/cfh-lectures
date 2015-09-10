@@ -46,6 +46,10 @@ Domain Path: /languages/
 	text-transform: uppercase;
 }
 
+.video-current .button {
+	display: none;
+}
+
 .speaker-navigation { 
 	margin-bottom: 1em;
 }
