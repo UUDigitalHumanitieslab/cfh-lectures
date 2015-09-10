@@ -23,6 +23,7 @@
 					foreach (get_field('speakers') as $speaker)
 					{
 						echo '<a href="' . get_the_permalink($speaker) . '">' . get_the_title($speaker) . '</a>';
+						echo '<br>';
 					}
 				?>
 				</div>
