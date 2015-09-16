@@ -92,3 +92,12 @@ add_filter('single_template', create_function(
 		return STYLESHEETPATH . "/single-{$cat->slug}.php"; }
 	return $the_template;' )
 );
+
+// This snippet fixes Vimeo embedding 
+// Found on: http://tinygod.pt/vimeo-embedding-on-wordpress/
+add_filter( 'oembed_fetch_url', 'add_param_oembed_fetch_url', 10, 3);
+
+function add_param_oembed_fetch_url($provider, $url, $args) {
+    return $provider . '&' . urlencode(http_build_query($args));
+}
+

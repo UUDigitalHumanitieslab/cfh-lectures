@@ -10,8 +10,8 @@
 				<div class="video-display">
 					<?php 
 						$video = get_field('video'); 
-						$embed_code = wp_oembed_get($video);
-						if ($embed_code) 
+						$embed_code = wp_oembed_get($video, array('width' => 740, 'height' => 416));
+						if ($embed_code)
 						{
 							echo $embed_code;
 						}
