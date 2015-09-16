@@ -5,7 +5,7 @@
 				<?php 
 					if ( has_post_thumbnail() ) 
 					{ 
-						the_post_thumbnail('size-full', array( 'class' => 'img-responsive' )); 
+						the_post_thumbnail('small', array( 'class' => 'img-responsive' )); 
 					} 
 					else 
 					{
