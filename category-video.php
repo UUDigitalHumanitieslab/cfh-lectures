@@ -13,19 +13,19 @@ get_header(); ?>
 		<?php 
 		// WP_Query arguments
 		$args = array (
-			'category_name'          => 'video',
-			'pagination'             => true,
-			'posts_per_page'         => '10',
-			'order'                  => 'DESC',
-			'meta_key'				 => 'date',
-			'orderby' 			     => 'meta_value'
+			'category_name'         => 'video',
+			'order'                 => 'DESC',
+			'meta_key'				=> 'date',
+			'orderby' 			    => 'meta_value',
+			'posts_per_page'        => '5',
+			'paged'					=> (get_query_var('paged')) ? get_query_var('paged') : 1
 		);
 
 		// The Query
-		$query = new WP_Query( $args );
-		if ( $query->have_posts() ) : ?>
+		$wp_query = new WP_Query( $args );
+		if ( $wp_query->have_posts() ) : ?>
 
-			<?php while ($query->have_posts()) : $query->the_post(); ?>
+			<?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
 
 				<?php get_template_part('parts/post-loop-video'); ?> 
 

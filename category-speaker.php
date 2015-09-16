@@ -32,7 +32,6 @@ get_header(); ?>
 	<?php 
 	
 	// Find posts with category speaker that have a last_name starting with $current_character; and order by the last name
-	// TODO: pagination?
 	$args = array(
 		'post_type'			=> 'post',
 		'category_name'		=> 'speaker',
@@ -45,14 +44,16 @@ get_header(); ?>
 				'value'		=> '^' . $current_character, 
 				'compare'	=> 'REGEXP', 
 			)
-		)
+		),
+		'posts_per_page'	=> '5', 
+		'paged'				=> (get_query_var('paged')) ? get_query_var('paged') : 1
 	);
 
 	// The Query
-	$query = new WP_Query($args);
-	if ($query->have_posts()) : ?>
+	$wp_query = new WP_Query($args);
+	if ($wp_query->have_posts()) : ?>
 
-		<?php while ($query->have_posts()) : $query->the_post(); ?>
+		<?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
 
 			<?php get_template_part('parts/post-loop-speaker'); ?> 
 
@@ -66,7 +67,6 @@ get_header(); ?>
 	</div>
 	<?php endif; ?> 
 </div>
-
 
 <?php get_template_part( 'parts/page-footer-2col'); ?> 
 
