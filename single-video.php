@@ -18,14 +18,14 @@
 						else 
 						{
 							// We're probably dealing with a lecturenet video here...
-							echo lecturenet_shortcode(array('url' => $video)); 
+							echo lecturenet_shortcode(array('url' => $video, 'width' => 740, 'height' => 416)); 
 						}
 					?>
 				</div>
 				<div class="col-sm-6 video-single">
 					<div class="video-current">
 					<?php
-						echo get_template_part('parts/post-loop-video');
+						get_template_part('parts/post-loop-video');
 					?>
 					</div>
 					<?php if (get_field('related_videos')) { ?>

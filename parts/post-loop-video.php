@@ -2,9 +2,10 @@
 		
 		<div class="col-sm-4 col-md-3 video-thumb">
 			<div class="archive-thumbnail">
-				<?php 
-					$speaker = get_field('speakers')[0]; // Retrieve the first speaker
-					echo get_the_post_thumbnail($speaker->ID, 'size-full', array( 'class' => 'img-responsive' )); 
+				<?php
+					// Retrieve the first speaker and show the thumbnail
+					$speaker = get_field('speakers')[0]; 
+					echo get_the_post_thumbnail($speaker->ID, 'uu-thumbnail', array('class' => 'img-responsive')); 
 				?>
 			</div>
 		</div>
