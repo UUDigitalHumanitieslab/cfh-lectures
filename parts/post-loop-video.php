@@ -4,8 +4,10 @@
 			<div class="archive-thumbnail">
 				<?php
 					// Retrieve the first speaker and show the thumbnail
-					$speaker = get_field('speakers')[0]; 
-					echo get_the_post_thumbnail($speaker->ID, 'uu-thumbnail', array('class' => 'img-responsive')); 
+					foreach (get_field('speakers') as $speaker)
+					{
+						echo get_the_post_thumbnail($speaker->ID, 'uu-thumbnail', array('class' => 'img-responsive'));
+					}
 				?>
 			</div>
 		</div>

@@ -32,6 +32,10 @@ Domain Path: /languages/
 }
 */
 
+.video-thumb img {
+	margin-bottom: .5em;
+}
+
 .video-thumb a:hover {
 	background-color: #ffcd00;
 }
