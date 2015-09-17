@@ -45,7 +45,7 @@ get_header(); ?>
 				'compare'	=> 'REGEXP', 
 			)
 		),
-		'posts_per_page'	=> '5', 
+		'posts_per_page'	=> 5, 
 		'paged'				=> (get_query_var('paged')) ? get_query_var('paged') : 1
 	);
 

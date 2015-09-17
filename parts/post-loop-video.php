@@ -3,7 +3,7 @@
 		<div class="col-sm-4 col-md-3 video-thumb">
 			<div class="archive-thumbnail">
 				<?php
-					// Retrieve the first speaker and show the thumbnail
+					// Show the thumbnails of all speakers
 					foreach (get_field('speakers') as $speaker)
 					{
 						echo get_the_post_thumbnail($speaker->ID, 'uu-thumbnail', array('class' => 'img-responsive'));
@@ -15,14 +15,14 @@
 		<div class="col-sm-8 col-md-9 video-content">
 			<header class="article-header">
 				<div class="video-date">
-				<?php 
+				<?php
 					$date = DateTime::createFromFormat('d/m/Y', get_field('date'));
 					echo $date->format(get_option('date_format'));
 				?>
 				</div>
 				<h4><?php the_title(); ?></h4>
 				<div class="video-speaker">
-				<?php 
+				<?php
 					foreach (get_field('speakers') as $speaker)
 					{
 						echo '<a href="' . get_the_permalink($speaker) . '">' . get_the_title($speaker) . '</a>';
