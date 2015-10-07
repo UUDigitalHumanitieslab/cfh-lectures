@@ -70,8 +70,13 @@ Domain Path: /languages/
 	margin-top: .5em;
 }
 
+.home-keywords, .home-events {
+	font-size: 1.5em;
+	text-align: center;
+}
+
 .home-speakers .entry-content {
-	font-size: 14px; 
+	font-size: 1em; 
 }
 
 .home-speakers .entry-content a {

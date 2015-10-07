@@ -48,13 +48,12 @@
 			<div class="agenda-archive">
 				<?php 
 
-				$today = date('Ymd');
-				$agenda_amount = get_field('uu_options_agenda_amount', 'option');
+				// Show 3 random videos from the archive
 				$args2 = array(
 					'post_type'				=> 'post',
 					'category_name' 		=> 'video',
-					'posts_per_page'		=> $agenda_amount,
-					'post__in'  			=> get_option( 'sticky_posts' ),
+					'posts_per_page'		=> 3,
+					'orderby' 				=> 'rand',
 				);
 
 				$agenda_query = new WP_Query( $args2 );
@@ -83,24 +82,27 @@
 	<div class="container home-footer">
 		<div class="col-sm-4 home-keywords">
 			<h2>Keywords</h2>
-			<?php wp_tag_cloud(array('taxonomy' => 'post_tag', 'smallest' => 16, 'largest' => 30)); ?> 
+			<p>
+			<?php wp_tag_cloud(array('taxonomy' => 'post_tag', 'smallest' => 16, 'largest' => 30, 'number' => 25, 'order' => 'RAND', 'separator' => ' &diams; ')); ?>
+			</p>
 			<a href="/keywords" class="button icon alignright">View all</a>
 		</div>
 		<div class="col-sm-4 home-events"> 
 			<h2>Events</h2>
-			<?php wp_tag_cloud(array('taxonomy' => 'event', 'smallest' => 16, 'largest' => 30)); ?> 
+			<p>
+			<?php wp_tag_cloud(array('taxonomy' => 'event', 'smallest' => 16, 'largest' => 30, 'number' => 8, 'order' => 'RAND', 'separator' => ' &diams; ')); ?> 
+			</p>
 			<a href="/events" class="button icon alignright">View all</a>
 		</div>
 		<div class="col-sm-4 home-speakers"> 
 			<h2>Speakers</h2>
 			<?php 
-				// Show the most recent speaker
+				// Show 2 random speakers from the archive
 				$args = array(
 					'post_type'	 			=> 'post',
-					'pagination'    		=> true,
-					'posts_per_page' 		=> '1',
 					'category_name' 		=> 'speaker',
-					'ignore_sticky_posts'   => false,
+					'posts_per_page' 		=> 2,
+					'orderby' 				=> 'rand',
 				);
 				$q = new WP_Query( $args );
 				if ( $q->have_posts() ) {
