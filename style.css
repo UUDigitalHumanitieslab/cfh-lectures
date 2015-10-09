@@ -62,8 +62,12 @@ Domain Path: /languages/
 	font-weight: bold;
 }
 
-.home-footer, .home-widget-area .row { 
+.home-footer, .home-widget-area { 
 	background-color: #efefef;
+}
+
+.home-footer {
+	padding-bottom: 30px;
 }
 
 #dhlab_image {
@@ -72,7 +76,7 @@ Domain Path: /languages/
 
 .home-keywords, .home-events {
 	font-size: 1.5em;
-	text-align: center;
+	/*text-align: center;*/
 }
 
 .home-speakers .entry-content {
@@ -81,4 +85,8 @@ Domain Path: /languages/
 
 .home-speakers .entry-content a {
 	display: none; 
+}
+
+.home-speakers .entry-header {
+	margin-top: 0;
 }

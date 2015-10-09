@@ -16,18 +16,18 @@
 
 				<div id="inner-footer" class="container clearfix">
 					<div class="row">
-						<div class="col-sm-4">
+						<div class="col-md-4 col-sm-6">
 							<img alt="<?php _e('Logo Utrecht University', 'uu2014'); ?>" src="<?php echo get_template_directory_uri() ?>/images/uu-logo-footer.svg">
 							<!-- <nav role="navigation">
 								<?php uu2014_footer_nav(); ?>
 							</nav> -->
 						</div>
-						<div class="col-sm-4">
+						<div class="col-md-4 col-sm-6">
 							<a href="http://digitalhumanities.wp.hum.uu.nl/" target="_blank">
 								<img id="dhlab_image" class="aligncenter" alt="Digital Humanities Lab" src="http://cfh-lectures.wp.hum.uu.nl/files/2015/08/dhlab.jpg">
 							</a>
 						</div>
-						<div class="col-sm-4">
+						<div class="col-md-4 col-sm-6">
 							<p class="source-org copyright pull-right">
 								&copy; <?php echo date('Y'); ?> 
 								<a href="http://digitalhumanities.wp.hum.uu.nl/" target="_blank">Digital Humanities Lab</a><br/>
