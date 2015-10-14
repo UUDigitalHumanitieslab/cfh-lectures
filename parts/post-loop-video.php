@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" class="row" <?php post_class('clearfix'); ?> role="article">
+<article id="post-<?php the_ID(); ?>" class="row video-article" <?php post_class('clearfix'); ?> role="article">
 		
 		<div class="col-sm-4 col-md-3 video-thumb">
 			<div class="archive-thumbnail">

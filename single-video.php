@@ -1,13 +1,17 @@
 <?php get_header(); ?>
 
-<?php get_template_part( 'parts/page-header-2col'); ?> 
+<?php get_template_part( 'parts/page-header-1col'); ?> 
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 		
 			<section class="entry-content clearfix" itemprop="articleBody">
-				<div class="video-display">
+				
+				
+				
+
+				<div class="video-display col-md-8 col-sm-12">
 					<?php 
 						$video = get_field('video'); 
 						$embed_code = wp_oembed_get($video, array('width' => 740, 'height' => 416));
@@ -21,16 +25,21 @@
 							echo lecturenet_shortcode(array('url' => $video, 'width' => 740, 'height' => 416)); 
 						}
 					?>
-				</div>
-				<div class="col-sm-6 video-single">
+
 					<div class="video-current">
 					<?php
 						get_template_part('parts/post-loop-video');
 					?>
 					</div>
+					<?php the_content(); ?>
+
+					<?php uu_sharebuttons(); ?>
+				</div>
+
+				<div class="col-md-4 col-sm-12 video-single">
 					<?php if (get_field('related_videos')) { ?>
 						<div class="video-related">
-							<h5>Related videos</h5>
+							<h2>Related videos</h2>
 							<?php 
 								$current = $post; // Save current post TODO: is there a better way?
 								foreach (get_field('related_videos') as $post)
@@ -43,7 +52,7 @@
 					<?php } ?>
 					<?php if (get_field('links')) { ?>
 						<div class="video-external-links">
-							<h5>External links</h5>
+							<h2>External links</h2>
 							<?php 
 								foreach (get_field('links') as $link)
 								{
@@ -52,14 +61,13 @@
 							?>
 						</div>
 					<?php } ?>
-					<div class="video-keywords"><h5>Keywords</h5><?php the_tags(''); ?></div>
-					<div class="video-events"><h5>Events</h5><?php the_terms(get_the_id(), 'event'); ?></div>
+					<div class="video-keywords"><h2>Keywords</h2><?php the_tags(''); ?></div>
+					<div class="video-events"><h2>Events</h2><?php the_terms(get_the_id(), 'event'); ?></div>
 				</div>
-				<div class="col-sm-6">
-					<?php the_content(); ?>
 
-					<?php uu_sharebuttons(); ?>
-				</div>
+				
+				
+				
 			</section><?php // end article section ?>
 
 			<footer class="article-footer">
@@ -83,6 +91,6 @@
 
 	<?php endif; ?>
 
-<?php get_template_part( 'parts/page-footer-2col'); ?> 
+<?php get_template_part( 'parts/page-footer-1col'); ?> 
 
 <?php get_footer(); ?>
