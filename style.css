@@ -58,10 +58,6 @@ Domain Path: /languages/
 	margin-bottom: 1em;
 }
 
-.current-character { 
-	font-weight: bold;
-}
-
 .home-footer, .home-widget-area { 
 	background-color: #efefef;
 }
@@ -123,4 +119,15 @@ Domain Path: /languages/
 
 .video-current article {
 	margin: 1em 0 0 0;
+}
+
+.character {
+	padding: .25em;
+	margin-right: .05em;
+	text-align: center;
+	background-color: #ffcd00;
+	margin-top: 1em;
+	line-height: 24px;
+	font-size: 18px;
+	display: inline;
 }

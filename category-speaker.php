@@ -19,11 +19,11 @@ get_header(); ?>
 		{
 			if ($letter == $current_character) 
 			{
-				echo '<span class="current-character">' . $letter . '</span> ';
+				echo '<h3 class="character current-character">' . $letter . '</h3> ';
 			}
 			else 
 			{
-				echo '<a href="/category/speaker/?character=' . $letter . '">' . $letter . '</a> ';
+				echo '<h3 class="character"><a href="/category/speaker/?character=' . $letter . '">' . $letter . '</a></h3> ';
 			}
 		} 
 		?>
